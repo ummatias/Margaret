@@ -1,4 +1,4 @@
-from python.user import User
+from user import User
 
 
 class Mentor(User):
@@ -13,15 +13,3 @@ class Mentor(User):
     @state.setter
     def state(self, value):
         self.__state = value
-
-
-# Examples
-
-
-m1 = Mentor('carlos siqueira', 'carlos@gmail.com', 'carlos#8999', 'homologado')
-
-print(m1.__dict__)
-
-print(m1.state)
-
-print(m1.name)

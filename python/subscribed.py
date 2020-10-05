@@ -1,4 +1,4 @@
-from python.user import User
+from user import User
 
 
 class Subscribed(User):
@@ -14,13 +14,3 @@ class Subscribed(User):
     @period.setter
     def period(self, value):
         return self.__period
-
-
-# Examples
-
-
-s1 = Subscribed('Fernando Guimarães', 'fernando.guimaraes@ccc.ufcg.com', '8955888899', '2020.1', 'negros')
-
-print(s1.__dict__)
-
-print(s1.period)

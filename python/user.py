@@ -1,12 +1,12 @@
-class User:
-    #id = 1
+import re
+from error import *
 
+
+class User:
     def __init__(self, name='', email='', discord_id=''):
-        # self.id = User.id
         self.name = name
         self.__email = email
         self.__discord_id = discord_id
-        # User.id += self.id
 
     @property
     def name(self):
@@ -14,10 +14,9 @@ class User:
 
     @name.setter
     def name(self, value):
-        value = value.lower().title()
+        value = value.upper()
         self.__name = value
 
-    """
     @property
     def email(self):
         return self.__email
@@ -32,5 +31,12 @@ class User:
 
     @discord_id.setter
     def discod_id(self, value):
-        return self.__discord_id 
-    """
+        return self.__discord_id
+
+    def email_validacion(self):
+        regex = '^[a-z]+[\._]?[a-z]+[@]{1}[c]{3}[.][c-u]{4}[.][d-u]{3}[.][b-r]{2}$'
+        try:
+            if re.search(regex, self.__email):
+                email_error()
+        except EmailError as error:
+            print(error)
