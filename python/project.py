@@ -1,5 +1,3 @@
-#coding: utf-8
-
 class Project:
 	def __init__(self, name, description, base_text, project_id, mentor, aux_mentor, areas, state, subscribeds):
 		self.name = name
