@@ -1,5 +1,6 @@
+#coding: utf-8
 class Project:
-	def __init__(self, name, description, base_text, project_id, mentor, aux_mentor, areas, state, subscribeds):
+	def __init__(self, name, description, base_text, project_id, mentor, aux_mentor, areas, state, subscribers):
 		self.name = name
 		self.description = description
 		self.base_text = base_text
@@ -8,7 +9,7 @@ class Project:
 		self.aux_mentor = aux_mentor
 		self.areas = areas
 		self.state = "Em análise"
-		self.subscribeds = {}
+		self.subscribers = {}
 
 	@property
 	def name(self):
@@ -75,11 +76,11 @@ class Project:
 		self.state = state
 	
 	@property
-	def subscribeds(self):
-		return self.subscribeds
+	def subscribers(self):
+		return self.subscribers
 		
-	def add_subscribeds(self, key, value):
-		self.subscribeds[key] = value
+	def add_subscribers(self, key, value):
+		self.subscribers[key] = value
 	
-	def get_subscribeds(self, key):
-		return self.subscribeds[key]
+	def get_subscribers(self, key):
+		return self.subscribers[key]
