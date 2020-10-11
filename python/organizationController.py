@@ -86,9 +86,3 @@ class Organization_Controller:
     def validate_organization_existence(self, org_id):
         if not(org_id in self.organizations):
             raise ValueError('Organização Inexistente')
- 
-c = Organization_Controller()
-c.add_organization('Emys Bar', 'Lugar Barato', 'Emys', 'externa')
-c.add_organization('Mateus Bar', 'Lugar Barato', 'Emys', 'externa')
-c.add_organization('Mateus Coixnha e Berbarb', 'Lugar Barato', 'Emys', 'externa')
-print(c.find_organization_by_atribute('name', 'Bar'))
