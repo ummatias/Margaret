@@ -1,5 +1,6 @@
 #coding: utf-8
 from organization import Organization
+import re
 
 class Organization_Controller:
 
@@ -31,7 +32,7 @@ class Organization_Controller:
 
     def modify_organization_by_atribute(self, org_id, atribute, new_atribute_value):
         if not atribute in ['name', 'desc', 'owner', 'category', 'state']:
-            raise Exception('Atributo Inválido')
+            raise AttributeError('Atributo Inválido')
 
         organization = self.organizations[org_id]
 
@@ -40,7 +41,7 @@ class Organization_Controller:
         
         elif atribute == 'desc':
             organization.desc = new_atribute_value
-        
+
         elif atribute == 'owner':
             organization.owner = new_atribute_value
        
@@ -52,27 +53,28 @@ class Organization_Controller:
 
     def find_organization_by_atribute(self, atribute, atribute_value):
         if not atribute in ['name', 'category', 'state', 'owner']:
-            raise Exception('Atributo Inválido')
-
+            raise AttributeError('Atributo Inválido')
+        
         find_result = []
 
         for key in self.organizations:
             organization = self.organizations[key]
 
             if atribute == 'name':
-                if organization.name == atribute_value:
+                response = re.search(atribute_value.lower(), organization.name.lower())
+                if response != None:
                     find_result.append(organization)
             
             elif atribute == 'category':
-                if organization.category == atribute_value:
+                if organization.category.lower() == atribute_value.lower():
                     find_result.append(organization)
 
             elif atribute == 'state':
-                if organization.state == atribute_value:
+                if organization.state.lower() == atribute_value.lower():
                     find_result.append(organization)
             
             else:
-                if organization.owner == atribute_value:
+                if organization.owner.lower() == atribute_value.lower():
                     find_result.append(organization)
 
         return find_result
@@ -83,5 +85,10 @@ class Organization_Controller:
 
     def validate_organization_existence(self, org_id):
         if not(org_id in self.organizations):
-            raise Exception('Organização Inexistente')
+            raise ValueError('Organização Inexistente')
  
+c = Organization_Controller()
+c.add_organization('Emys Bar', 'Lugar Barato', 'Emys', 'externa')
+c.add_organization('Mateus Bar', 'Lugar Barato', 'Emys', 'externa')
+c.add_organization('Mateus Coixnha e Berbarb', 'Lugar Barato', 'Emys', 'externa')
+print(c.find_organization_by_atribute('name', 'Bar'))

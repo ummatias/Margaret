@@ -17,7 +17,7 @@ class Organization:
     @category.setter
     def category(self, category):
         if not (category in ['laboratório', 'organização estudantil', 'externa']):
-            raise Exception('Categoria Inválida')
+            raise ValueError('Categoria Inválida')
         self._category = category
 
     @property
@@ -27,7 +27,7 @@ class Organization:
     @state.setter
     def state(self, state):
         if not (state in ['Em análise', 'Necessita Revisão', 'Pronto']):
-            raise Exception('Estado Inválido')
+            raise ValueError('Estado Inválido')
         self._state = state
 
 
