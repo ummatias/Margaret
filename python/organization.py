@@ -1,39 +1,13 @@
 class Organization:
 
     def __init__(self, name, desc, owner, category, org_id):
-        self._name = name
-        self._desc = desc
-        self._owner = owner
+        self.name = name
+        self.desc = desc
+        self.owner = owner
         self._category= category
-        self._org_id = org_id
+        self.org_id = org_id
         self._state = "Em análise"
         self._projects = {}
-
-    @property
-    def name(self):
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        self._name = name
-
-
-    @property
-    def desc(self):
-        return self._desc
-
-    @desc.setter
-    def desc(self, desc):
-        self._desc = desc
-
-
-    @property
-    def owner(self):
-        return self._owner
-
-    @owner.setter
-    def owner(self, owner):
-        self._owner = owner
 
     
     @property
@@ -42,6 +16,8 @@ class Organization:
 
     @category.setter
     def category(self, category):
+        if not (category in ['laboratório', 'organização estudantil', 'externa']):
+            raise Exception('Categoria Inválida')
         self._category = category
 
 
@@ -51,20 +27,13 @@ class Organization:
 
     @state.setter
     def state(self, state):
+        if not (state in ['Em análise', 'Necessita Revisão', 'Pronto']):
+            raise Exception('Estado Inválido')
         self._state = state
 
-    
-    @property
-    def org_id(self):
-        return self._org_id
-
-    @property
-    def projects(self):
-        return self._projects
 
     def project_add(self, key, value):
         self._projects[key] = [value]
 
     def project_get(self, key):
         return self._projects[key]
-
