@@ -1,15 +1,15 @@
+#coding: utf-8
 class Organization:
 
     def __init__(self, name, desc, owner, category, org_id):
         self.name = name
         self.desc = desc
         self.owner = owner
-        self._category= category
+        self._category = category
         self.org_id = org_id
         self._state = "Em análise"
-        self._projects = {}
+        self.projects = {}
 
-    
     @property
     def category(self):
         return self._category
@@ -19,7 +19,6 @@ class Organization:
         if not (category in ['laboratório', 'organização estudantil', 'externa']):
             raise Exception('Categoria Inválida')
         self._category = category
-
 
     @property
     def state(self):
@@ -32,8 +31,8 @@ class Organization:
         self._state = state
 
 
-    def project_add(self, key, value):
-        self._projects[key] = [value]
+    def add_project(self, key, value):
+        self.projects[key] = [value]
 
-    def project_get(self, key):
-        return self._projects[key]
+    def get_project(self, key):
+        return self.projects[key]
