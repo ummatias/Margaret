@@ -6,18 +6,13 @@
 
 O **Margaret** será desenvolvido para otimizar e auxiliar o processo de seleção e administração de organizações, projetos e inscritos para as futuras edições do **Andromedev** - evento organizado pela **[OpenDevUFCG](https://opendevufcg.org/)**, com o intuito de incentivar a participção de estudantes da Universidade Federal de Campina Grande em projetos open source.
   
-  
 ## Como contribuir?
 
 Quer sugerir algo novo ou alguma mudança? Leia nosso *[Guia de Contribuição](CONTRIBUTING.md)*.
 
-  
-
 ## Guia de Conduta
 
 Antes de contribuir, clique *[aqui](CODE_OF_CONDUCT.md)* para acessar nosso código de conduta.
-
-  
 
 ## Contribuindo
 
