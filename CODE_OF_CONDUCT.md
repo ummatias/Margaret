@@ -26,6 +26,7 @@ Os mantenedores do projeto têm o direito e a responsabilidade de editar, remove
 
 
 - Caio Davi - [@caiodavic](https://github.com/caiodavic)
+- Carmem Neri - [@carmemneri](https://github.com/carmemneri)
 - Gabrielly Trajano - [@gabriellytrajano](https://github.com/gabriellytrajano)
 - Huandrey Pontes [@huandrey](https://github.com/huandrey)
 - Juan Barros - [@JuanBarros2](https://github.com/JuanBarros2)
