@@ -1,8 +1,6 @@
 # Margaret 
 
-<!-- <center><a href='https://svgshare.com/s/QRw'><img width="250" src='https://svgshare.com/i/QRw.svg' title='Margaret' /></a></center> -->
-
-  <center><a href='https://svgshare.com/s/QTp' ><img width="400" src='https://svgshare.com/i/QTp.svg' title='' /></a></center>
+  <center><img width="400" alt="Logo da Margaret" src='https://svgshare.com/i/QTp.svg' title='' /></center>
 
 <br></br>
 
@@ -26,4 +24,4 @@ Antes de contribuir, clique *[aqui](CODE_OF_CONDUCT.md)* para acessar nosso cód
 [![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/0)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/0)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/1)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/1)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/2)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/2)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/3)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/3)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/4)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/4)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/5)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/5)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/6)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/6)[![](https://sourcerer.io/fame/huandrey/huandrey/Margaret/images/7)](https://sourcerer.io/fame/huandrey/huandrey/Margaret/links/7)
 
 <center><h2>Participe da nossa comunidade!<h2>
-<a href="https://discord.com/channels/558293573494112257/757323511768285326" target="blank"><img width="80" src="https://www.flaticon.com/svg/static/icons/svg/906/906361.svg"/></center>
+<a href="https://discord.gg/bVwudh" target="blank" ><img width="80" alt="Convite para o Discord" src="https://www.flaticon.com/svg/static/icons/svg/906/906361.svg"/></center>
