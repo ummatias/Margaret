@@ -36,7 +36,20 @@ class OrganizationController:
 
         organization = self.organizations[org_id]
 
-        setattr(organization, atribute, new_atribute_value)
+        if atribute == 'name':
+            organization.name = new_atribute_value
+        
+        elif atribute == 'desc':
+            organization.desc = new_atribute_value
+
+        elif atribute == 'owner':
+            organization.owner = new_atribute_value
+       
+        elif atribute == 'category':
+            organization.category = new_atribute_value
+        
+        else:
+            organization.state = new_atribute_value
 
     def find_organization_by_atribute(self, atribute, atribute_value):
         if not atribute in ['name', 'category', 'state', 'owner']:
@@ -47,10 +60,23 @@ class OrganizationController:
         for key in self.organizations:
             organization = self.organizations[key]
 
-            organizationAtribute =  getattr(organization, atribute).lower()
-            if organizationAtribute == atribute_value.lower() or re.search(atribute_value.lower(), organizationAtribute) != None:
-                find_result.append(organization)
+            if atribute == 'name':
+                response = re.search(atribute_value.lower(), organization.name.lower())
+                if response != None:
+                    find_result.append(organization)
             
+            elif atribute == 'category':
+                if organization.category.lower() == atribute_value.lower():
+                    find_result.append(organization)
+
+            elif atribute == 'state':
+                if organization.state.lower() == atribute_value.lower():
+                    find_result.append(organization)
+            
+            else:
+                if organization.owner.lower() == atribute_value.lower():
+                    find_result.append(organization)
+
         return find_result
             
     def generate_organization_id(self):
