@@ -14,17 +14,17 @@ class SubscribedsController:
         return self.subscribeds[email]
 
     def list_subscribeds(self):
-        return list(self.subscribeds.values())
+        return self.subscribeds.values()
 
-    def find_subscribed_by_attribute(self,attribute,value):
+    def find_subscribed_by_attribute(self,attribute,value_attribute):
         if attribute.lower() not in['name','email','discord','period','minoritary_group']:
             raise AttributeError("Atributo inválido")
 
-        found_subscribeds = {}
+        found_subscribeds = []
         
-        for key, val in enumerate(self.subscribeds.values()):
-           if value.lower() in getattr(val,attribute):
-               found_subscribeds.update({key,val})
+        for sub in self.subscribeds.values():
+           if value_attribute.lower() in getattr(sub,attribute):
+               found_subscribeds.append(sub)
         
         return found_subscribeds
 
@@ -58,8 +58,7 @@ class SubscribedsController:
             print(error)
 
     def validating_existing_email(self,email):
-        for subs in self.subscribeds:
-            if subs.email == email:
-                raise ValueError("Email já em uso")       
+        if email in self.subscribeds.keys():
+            raise ValueError("Email já em uso")    
     
     
