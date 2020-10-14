@@ -17,8 +17,4 @@ class Mentor(User):
 
     @property
     def organization(self):
-        return self.__organization
-
-    @organization.setter
-    def organization(self,value):
-        self.__organization = value
+        return self.__organization   
