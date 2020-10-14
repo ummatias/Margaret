@@ -1,8 +1,8 @@
-                            #coding: utf-8
+#coding: utf-8
 from organization import Organization
 import re
 
-class Organization_Controller:
+class OrganizationController:
 
     def __init__(self):
         self.organizations = {}
