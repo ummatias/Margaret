@@ -36,7 +36,9 @@ class SubscribedsController:
         self.validate_subscribed_existence(email_user)
         
         if attribute == 'email':
-            self.email_validacion(email_user)
+            self.email_validacion(new_attribute)
+
+        setattr(self.subscribeds[email_user],attribute,new_attribute)
         
             
     def remove_subscribed(self,email_user):
@@ -45,7 +47,7 @@ class SubscribedsController:
 
     def validate_subscribed_existence(self,email_user):
         if not email_user in self.subscribeds.keys():
-            raise Exception("Usuário não inscrito")
+            raise ValueError("Usuário não inscrito")
 
     def email_validacion(self,email):
         regex = '^[a-z]+[./_]?[a-z]+[@]{1}[c]{3}[.][c-u]{4}[.][d-u]{3}[.][b-r]{2}$'
@@ -58,7 +60,6 @@ class SubscribedsController:
     def validating_existing_email(self,email):
         for subs in self.subscribeds:
             if subs.email == email:
-                raise Exception("Email já em uso")
-            
+                raise ValueError("Email já em uso")       
     
     
