@@ -36,7 +36,7 @@ class SubscribedsController:
         self.validate_subscribed_existence(email_user)
         
         if attribute == 'email':
-            self.email_validacion(new_attribute)
+            self.email_validation(new_attribute)
 
         setattr(self.subscribeds[email_user],attribute,new_attribute)
         
@@ -49,13 +49,13 @@ class SubscribedsController:
         if not email_user in self.subscribeds.keys():
             raise ValueError("Usuário não inscrito")
 
-    def email_validacion(self,email):
+    def email_validation(self,email):
         regex = '^[a-z]+[./_]?[a-z]+[@]{1}[c]{3}[.][c-u]{4}[.][d-u]{3}[.][b-r]{2}$'
         try:
             if re.search(regex,email):
-                email_error()
-        except EmailError as error:
-            print(error)
+                email_error()        
+        except:
+            raise EmailError("Email inválido")
 
     def validating_existing_email(self,email):
         if email in self.subscribeds.keys():
