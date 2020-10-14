@@ -2,7 +2,7 @@
 from organization import Organization
 import re
 
-class OrganizationController:
+class Organization_Controller:
 
     def __init__(self):
         self.organizations = {}
