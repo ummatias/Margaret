@@ -7,9 +7,9 @@ class MentorController:
     def __init__(self):
         self.mentors = {}
 
-    def add_mentor(self,name,email,discord,state,organization):
+    def add_mentor(self,name,email,discord,state):
         self.validating_existing_email(email)
-        mentor = Mentor(name,email,discord,state,organization)
+        mentor = Mentor(name,email,discord,state)
         self.mentors[email] = mentor
         return self.mentors[email]
     
