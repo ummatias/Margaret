@@ -1,8 +1,8 @@
 from subscribed import Subscribed
-from error import *
 import re
 
-class SubscribersController:
+
+class SubscribedsController:
 
     def __init__(self):
         self.subscribers = {}       
@@ -53,9 +53,9 @@ class SubscribersController:
         regex = '^[a-z]+[./_]?[a-z]+[@]{1}[c]{3}[.][c-u]{4}[.][d-u]{3}[.][b-r]{2}$'
         try:
             if re.search(regex,email):
-                email_error()        
+                return email        
         except:
-            raise EmailError("Email inválido")
+            raise Exception("Email inválido")
 
     def validating_existing_email(self,email):
         if email in self.subscribers.keys():
