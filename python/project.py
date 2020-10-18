@@ -1,6 +1,6 @@
 #coding: utf-8
 class Project:
-	def __init__(self, name, description, base_text, project_id, mentor, aux_mentor, areas, state, subscribers):
+	def __init__(self, name, description, base_text, project_id, mentor, aux_mentor, areas):
 		self.name = name
 		self.description = description
 		self.base_text = base_text

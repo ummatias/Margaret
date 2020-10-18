@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import re
 from util import validation
 
 
@@ -27,3 +26,4 @@ class User:
     def email(self,value):
         validation.email_validation(value)
         self.email = value
+
