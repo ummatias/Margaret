@@ -1,8 +1,5 @@
 # -*- coding: utf-8 -*-
 from subscribed import Subscribed
-from util import validation
-import re
-
 
 class subscribeds_controller:
 
@@ -37,9 +34,7 @@ class subscribeds_controller:
         
         self.validate_subscribed_existence(email_user)
         
-        if attribute == 'email':
-            validation.email_validation(new_attribute)
-
+       
         setattr(self.subscribers[email_user],attribute,new_attribute)
         
             

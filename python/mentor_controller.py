@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 from mentor import Mentor
-from util import validation
-import re
 
 class mentor_controller:
 
@@ -34,10 +32,7 @@ class mentor_controller:
         if attribute.lower() not in['name','email','discord','state','organization']:
             raise AttributeError("Atributo inválido")
 
-        self.validate_mentor_existence(email_user)
-
-        if attribute == 'email':
-            validation.email_validation(new_attribute)
+        self.validate_mentor_existence(email_user)            
 
         setattr(self.mentors[email_user],attribute,new_attribute)
         
@@ -53,4 +48,3 @@ class mentor_controller:
     def validating_existing_email(self,email):
         if email in self.mentors.keys():
             raise ValueError("Email já em uso")
-
