@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-import re
+from util import validation
+
 
 
 class User:
@@ -21,11 +22,8 @@ class User:
         else:
             raise Exception('Invalid name!')
 
-    def email_validacion(self):
-        regex = '^[a-z]+[\._]?[a-z]+[@]{1}[c]{3}[.][c-u]{4}[.][d-u]{3}[.][b-r]{2}$'
+    @email.setter
+    def email(self,value):
+        validation.email_validation(value)
+        self.email = value
 
-        if re.search(regex, self.email):
-            return self.email
-        else:
-            raise Exception('Invalid mail!')
-            
