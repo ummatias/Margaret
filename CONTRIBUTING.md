@@ -74,5 +74,9 @@ Vá até a página do seu fork e clique no botão **New Pull Request**. A págin
 ## Recomendações e Links Úteis
 
 - Caso sinta difículdade em alguma parte do processo ou tenha dúvidas, não hesite em contatar os Maintainers do projeto.
-- [Guia sobre Git e GitHub](https://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/)
-- [Sobre OO em Python](https://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/)
+- [Sobre OO em Python](https://wiki.python.org.br/ProgramacaoOrientadaObjetoPython)
+- [Guia iniciante sobre Open Source](https://dev.to/opendevufcg/contribuindo-para-projetos-open-source-com-github-3i76)
+- Sobre Git e GitHub:
+  - [Guia parte 1](https://medium.com/@Juliobguedes/entendendo-git-883464f379de)
+  - [Guia parte 2](https://medium.com/@Juliobguedes/entendendo-git-branches-parte-2-3778f4258843)
+  - [Para mais dúvidas](https://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/)
