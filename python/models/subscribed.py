@@ -8,4 +8,3 @@ class Subscribed(User):
         User.__init__(self, name, email, discord_id)
         self.period = period
         self.minority_group = minority_group
-

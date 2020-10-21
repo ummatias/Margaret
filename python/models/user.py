@@ -3,7 +3,6 @@
 from util import validation
 
 
-
 class User:
     def __init__(self, name='', email='', discord_id=''):
         self.name = name
@@ -23,7 +22,6 @@ class User:
             raise Exception('Invalid name!')
 
     @email.setter
-    def email(self,value):
+    def email(self, value):
         validation.email_validation(value)
         self.email = value
-
