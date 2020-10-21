@@ -1,5 +1,5 @@
 #coding: utf-8
-from organization import Organization
+from python.models.organization import Organization
 import re
 
 class OrganizationController:
