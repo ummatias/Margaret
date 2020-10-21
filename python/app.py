@@ -1,5 +1,5 @@
 from flask import Flask, jsonify
-from python.project_controller import ProjectController
+from project_controller import ProjectController
 
 app = Flask(__name__)
 
