@@ -1,4 +1,4 @@
-from python.project_controller import ProjectController
+from project_controller import ProjectController
 
 
 def test_id_validation():
