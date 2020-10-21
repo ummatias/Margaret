@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from subscribed import Subscribed
 
-class subscribeds_controller:
+class SubscribedsController:
 
     def __init__(self):
         self.subscribers = {}       
