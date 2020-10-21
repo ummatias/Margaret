@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from mentor import Mentor
+from python.models.mentor import Mentor
 
-class mentor_controller:
+class MentorController:
 
     def __init__(self):
         self.mentors = {}
