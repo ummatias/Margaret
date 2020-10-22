@@ -1,4 +1,6 @@
-from project import Project
+# -*- coding: utf-8 -*-
+
+from models.project import Project
 
 
 class ProjectController:
@@ -12,7 +14,8 @@ class ProjectController:
             project_id += 1
         self.current_id = project_id
 
-        project = Project(name, description, base_text, project_id, mentor, mentor_aux, areas).__dict__
+        project = Project(name, description, base_text,
+                          project_id, mentor, mentor_aux, areas).__dict__
         self.projects[project_id] = project
         return project_id
 
@@ -56,5 +59,3 @@ class ProjectController:
                 return val
             elif counter_id not in self.projects:
                 raise Exception('Index Error')
-
-
