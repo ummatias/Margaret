@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-from models.subscribed import Subscribed
+from subscribed import Subscribed
 
 
-class subscribeds_controller:
+class SubscribedsController:
 
     def __init__(self):
         self.subscribers = {}
