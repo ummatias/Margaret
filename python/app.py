@@ -1,19 +1,14 @@
 from flask import Flask, jsonify
-from models.organization import Organization
+from python.project import Project
 
 app = Flask(__name__)
 
 
-@app.route("/", methods=["POST"])
+@app.route("/", methods=["GET"])
 def index():
-    return "Hello world!"
-
-
-@app.route("/juan", methods=["GET"])
-def juan():
-    org = Organization("Juan", "", "", "", "")
-
-    return jsonify(org.__dict__)
+    proj = Project("Margaret", "sistem andromedev",
+                   "projeto opensource", "back")
+    return jsonify(proj.__dict__)
 
 
 if __name__ == "__main__":
