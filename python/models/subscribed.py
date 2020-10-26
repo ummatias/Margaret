@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from user import User
+from python.models.user import User
+from python.util import validation
 
 
 class Subscribed(User):
@@ -9,3 +10,11 @@ class Subscribed(User):
         self.period = period
         self.minority_group = minority_group
 
+    @property
+    def period(self):
+        return self._period
+    
+    @period.setter
+    def period(self, value):
+        validation.period_validation(value)
+        self._period = value

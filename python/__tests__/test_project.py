@@ -1,5 +1,5 @@
 #coding: utf-8
-from python.project import Project
+from python.models.project import Project
 
 def test_check_email():
 
