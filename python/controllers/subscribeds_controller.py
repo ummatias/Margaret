@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 from subscribed import Subscribed
 
-
 class SubscribedsController:
-
     def __init__(self):
         self.subscribers = {}
 
     def add_subscriber(self, name, email, discord, period, minoritary_group):
         self.validating_existing_email(email)
         subscribed = Subscribed(name, email, discord, period, minoritary_group)
+
         self.subscribers[email] = subscribed
         return self.subscribers[email]
 
@@ -33,7 +32,6 @@ class SubscribedsController:
             raise AttributeError("Atributo inválido")
 
         self.validate_subscribed_existence(email_user)
-
         setattr(self.subscribers[email_user], attribute, new_attribute)
 
     def remove_subscribed(self, email_user):
@@ -47,3 +45,4 @@ class SubscribedsController:
     def validating_existing_email(self, email):
         if email in self.subscribers.keys():
             raise ValueError("Email já em uso")
+            

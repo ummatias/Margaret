@@ -25,3 +25,4 @@ class User:
     def email(self, value):
         validation.email_validation(value)
         self.email = value
+
