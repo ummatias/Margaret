@@ -40,4 +40,5 @@ class User:
     def discord_id(self, value):
         if isinstance(value, str):
             validation.empty_validation(value, 'Discord ID')
+            validation.discord_id_validation(value)
             self._discord_id = value
