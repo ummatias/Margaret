@@ -39,7 +39,7 @@ def test_subscribed_letters_period():
 def test_subscribed_period_without_semester():
     try:
         sub = Subscribed('Bakugo', 'bakugo.numberone@ccc.ufcg.edu.br', 'Boom#4576', '2015')
-        fail('Periodo negativo foi cadastrado')
+        fail('Periodo sem semestre foi cadastrado')
     except AttributeError:
         pass
 
