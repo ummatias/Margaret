@@ -32,7 +32,11 @@ class Organization:
 
 
     def add_project(self, key, value):
-        self.projects[key] = [value]
+        if key not in self.projects:
+            self.projects[key] = value
+        else:
+            key += 1
+            self.projects[key] = value
 
     def get_project(self, key):
         return self.projects[key]
