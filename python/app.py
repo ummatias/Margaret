@@ -1,29 +1,27 @@
 from flask import Flask, jsonify, request
 from python.models.project import Project
-
-app = Flask(__name__)
-
-
-@app.route("/", methods=["GET"])
-def get():
-    proj = Project("Margaret", "sistem andromedev",
-                   "projeto opensource", 1, "juan", "renan", ["back", "front"])
-    return jsonify(proj.__dict__), 200
+from python.ext.version import version
 
 
-@app.route("/", methods=["POST"])
-def post():
-    data = request.get_json()
+def create_app():
+    app = Flask(__name__)
+    version.init_app(app)
 
-    return {"name": data["nome"]}, 200
+    @app.route("/", methods=["GET"])
+    def get():
+        proj = Project("Margaret", "sistem andromedev",
+                       "projeto opensource", 1, "juan", "renan", ["back", "front"])
+        return jsonify(proj.__dict__), 200
 
+    @app.route("/", methods=["POST"])
+    def post():
+        data = request.get_json()
 
-@app.route("/", methods=["PUT"])
-def put():
-    data = request.get_json()
+        return {"name": data["nome"]}, 200
 
-    return {"name": data["nome"]+"a"}
+    @app.route("/", methods=["PUT"])
+    def put():
+        data = request.get_json()
 
-
-if __name__ == "__main__":
-    app.run()
+        return {"name": data["nome"]+"a"}
+    return app
