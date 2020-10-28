@@ -1,4 +1,4 @@
-from user import User
+from python.models.user import User
 
 
 class Mentor(User):
