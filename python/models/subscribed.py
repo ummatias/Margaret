@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from python.models.user import User
-from python.util import validation
-
 
 class Subscribed(User):
     def __init__(self, name, email, discord_id, period, minority_group=''):
