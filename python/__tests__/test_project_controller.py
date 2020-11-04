@@ -17,7 +17,7 @@ def test_find_state():
     collections.add_project('Roadmap', '', '', '', '', '')
     project = collections.projects[1]
 
-    assert project.get('state') == 'Em análise'
+    assert project.state == 'Em análise'
 
 
 def test_find_area():
@@ -26,7 +26,7 @@ def test_find_area():
     collections.add_project('Tamburetei', '', '', '', '', 'Web')
     project = collections.projects[1]
 
-    assert project.get('areas') == 'Web'
+    assert project.areas == 'Web'
 
 
 def test_update_project_name():
@@ -37,7 +37,7 @@ def test_update_project_name():
     collections.update_project_name(1, 'IssueAi')
     project = collections.projects[1]
 
-    assert project.get('name') == 'IssueAi'
+    assert project.name == 'IssueAi'
 
 
 def test_update_project_description():
@@ -47,4 +47,4 @@ def test_update_project_description():
     collections.update_project_description(1, 'Com descrição')
     project = collections.projects[1]
 
-    assert project.get('description') == 'Com descrição'
+    assert project.description == 'Com descrição'
