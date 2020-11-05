@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from project import Project
+from models.project import Project
 
 
 class ProjectController:

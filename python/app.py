@@ -2,7 +2,7 @@ from flask import Flask
 from python.models.subscribed import Subscribed
 from python.models.user import User
 from python.models.project import Project
-from python.project_controller import ProjectController
+from python.controllers.project_controller import ProjectController
 
 app = Flask(__name__)
 
