@@ -39,7 +39,7 @@ def remove_org():
     return organization_controller.remove_organization(data['org_Id']).__dict__
     
 
-@org.route('/<org_id>', methods=['GET'])
+@org.route('/<int:org_id>', methods=['GET'])
 def get_org(org_id):
     temp_org = organization_controller.get_organization(int(org_id)).__dict__
     temp_owner = temp_org['owner']
