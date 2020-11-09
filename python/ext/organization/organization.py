@@ -22,13 +22,12 @@ def list_orgs():
     orgs = organization_controller.list_organizations()
     
     for i in range(len(orgs)):
-            temp_org = orgs[i].__dict__
-            temp_owner = temp_org['owner']
-            if(isinstance(temp_owner, User)):
-                temp_owner = temp_owner.__dict__
-
-            temp_org['owner'] = temp_owner
-            response[i + 1] = temp_org
+        temp_org = orgs[i].__dict__
+        temp_owner = temp_org['owner']
+        if(isinstance(temp_owner, User)):
+            temp_owner = temp_owner.__dict__
+        temp_org['owner'] = temp_owner
+        response[i + 1] = temp_org
 
     return jsonify(response)
 
