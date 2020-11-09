@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from models.project import Project
+from python.models.project import Project
 
 
 class ProjectController:
@@ -15,7 +15,7 @@ class ProjectController:
         self.current_id = project_id
 
         project = Project(name, description, base_text,
-                          project_id, mentor, mentor_aux, areas)
+                          mentor, mentor_aux, areas)
         self.projects[project_id] = project
         return project_id
 
@@ -25,10 +25,9 @@ class ProjectController:
     def find_projects_by_state(self, state):
         found_projects = {}
 
-        for key, val in enumerate(self.projects.values()):
+        for key, val in self.projects.items():
             if val.state == state:
-                found_projects.update({key + 1: val})
-
+                found_projects.update({key: val})
         if not found_projects:
             raise Exception('Projects not found!')
 
@@ -37,35 +36,18 @@ class ProjectController:
     def find_projects_by_area(self, area):
         found_projects = {}
 
-        for key, val in enumerate(self.projects.values()):
+        for key, val in self.projects.items():
             if area in val.areas:
-                found_projects.update({key + 1: val})
-
+                found_projects.update({key: val})
         if not found_projects:
             raise Exception('Projects not found!')
 
         return found_projects
 
-    def update_project_name(self, current_id, new_name):
+    def update_project_value(self, current_id, key, new_value):
         if current_id in self.projects:
-            project = self.projects.get(current_id)
-            project.name = new_name
-            return project
-        else:
-            raise Exception('Index Error')
-
-    def update_project_description(self, current_id, new_description):
-        if current_id in self.projects:
-            project = self.projects.get(current_id)
-            project.description = new_description
-            return project
-        else:
-            raise Exception('Index Error')
-
-    def update_project_base_text(self, current_id, new_base_text):
-        if current_id in self.projects:
-            project = self.projects.get(current_id)
-            project.base_text = new_base_text
+            project = self.projects[current_id]
+            setattr(project, key, new_value)
             return project
         else:
             raise Exception('Index Error')
@@ -89,24 +71,20 @@ class ProjectController:
         else:
             raise Exception('Index Error')
 
-    def update_project_state(self, current_id, new_state):
-        if current_id in self.projects:
-            project = self.projects[current_id]
-            project.state = new_state
-            return new_state
-        else:
-            raise Exception('Index Error')
-
     def remove_project(self, current_id):
         if current_id in self.projects:
+            project = self.projects[current_id]
             del self.projects[current_id]
-            return self.projects
+            return project
         else:
             raise Exception('Index Error')
 
     def find_project_by_mentor(self, email_mentor):
-        for key, project in enumerate(self.projects.values()):
-            if project.mentor.email == email_mentor or project.mentor_aux.email == email_mentor:
-                return project
-            else:
-                raise Exception('Project not found!')
+        found_projects = {}
+        for key, project in self.projects.items():
+            if project.check_mentor_by_email(email_mentor):
+                found_projects.update({key: project})
+        if not found_projects:
+            raise Exception('Mentor not found!')
+
+        return found_projects
