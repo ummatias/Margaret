@@ -29,7 +29,7 @@ class Project:
     def state(self):
         return self._state
 
-    @ state.setter
+    @state.setter
     def state(self, state):
         state = state.title()
         if not (state in ['Em Análise', 'Necessita Revisão', 'Pronto - Com Sugestões', 'Pronto - Completo']):
