@@ -48,7 +48,7 @@ class Project:
 
     def check_email(self, email):
         mentor = self.mentor
-        if email == mentor["email"]:
+        return email == mentor["email"]
             return True
         return False
 
