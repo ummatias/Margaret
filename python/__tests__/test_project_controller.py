@@ -107,6 +107,6 @@ def test_find_project_by_mentor():
     try:
         collections.find_project_by_mentor(
             'joao.ribeiro@ccc.ufcg.edu.br')
-        assert False
+        fail("Foi encontrado um mentor nao cadastrado")
     except:
         assert True
