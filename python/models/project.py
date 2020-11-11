@@ -25,7 +25,7 @@ class Project:
             else:
                 raise Exception('Área Inválida')
 
-    @ property
+    @property
     def state(self):
         return self._state
 
