@@ -25,7 +25,7 @@ def list_orgs():
     for i in range(len(orgs)):
         response[i + 1] = json.loads(orgs[i].to_json())
 
-    return jsonify(response)
+    return response
 
 
 @org.route('/', methods=['DELETE'])
@@ -42,6 +42,7 @@ def get_org(org_id):
 def update_org(org_id):
     args = list(request.get_json().items())
     organization_controller.modify_organization_by_atribute(org_id, args[0][0], args[0][1])
+    return 'UPDATED'
     
 
 @org.route('/search', methods=['GET'])
