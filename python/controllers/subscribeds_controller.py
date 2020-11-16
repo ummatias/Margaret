@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from subscribed import Subscribed
+from python.models.subscribed import Subscribed
 
 class SubscribedsController:
 
@@ -13,7 +13,7 @@ class SubscribedsController:
         return self.subscribers[email]
 
     def list_subscribeds(self):
-        return self.subscribers.values()
+        return list(self.subscribers.values())
 
     def find_subscribed_by_attribute(self,attribute,value_attribute):
         if attribute.lower() not in['name','email','discord','period','minoritary_group']:
@@ -32,19 +32,22 @@ class SubscribedsController:
         if attribute.lower() not in['name','email','discord','period','minoritary_group']:
             raise AttributeError("Atributo inválido")
         
-        self.validate_subscribed_existence(email_user)
-        
+        modified_sub = self.get_subscribed(email_user)        
        
-        setattr(self.subscribers[email_user],attribute,new_attribute)
+        setattr(modified_sub,attribute,new_attribute)
         
-            
-    def remove_subscribed(self,email_user):
-        self.validate_subscribed_existence(email_user)
-        del self.subscribers[email_user]
-
-    def validate_subscribed_existence(self,email_user):
-        if not email_user in self.subscribers.keys():
+    def get_subscribed(self,email_user):
+        if not email_user in self.subscribers.keys():   
             raise ValueError("Usuário não inscrito")
+
+        return self.subscribers[email_user]
+
+
+    def remove_subscribed(self,email_user):       
+        removed_subs = self.get_subscribed(email_user)    
+        
+        self.subscribers.pop(email_user)
+        return removed_subs              
 
             
     def validating_existing_email(self,email):
