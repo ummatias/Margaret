@@ -20,23 +20,20 @@ class OrganizationController:
         return org_id
 
     def remove_organization(self, org_id):
-        validate_organization_existence(org_id, self.organizations)
-
-        removed_organization = self.organizations[org_id]
+        removed_organization = self.get_organization(org_id)
         self.organizations.pop(org_id)
         return removed_organization
 
     def get_organization(self, org_id):
-        validate_organization_existence(org_id, self.organizations)
-
+        if not(org_id in self.organizations):
+            raise ValueError('Organização Inexistente')
         return self.organizations[org_id]
 
     def modify_organization_by_atribute(self, org_id, atribute, new_atribute_value):
         if not atribute in ['name', 'desc', 'owner', 'category', 'state']:
             raise AttributeError('Atributo Inválido')
-        validate_organization_existence(org_id, self.organizations)
 
-        organization = self.organizations[org_id]
+        organization = self.get_organization(org_id)
         setattr(organization, atribute, new_atribute_value)
 
     def find_organization_by_atribute(self, atribute, atribute_value):
