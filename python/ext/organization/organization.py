@@ -27,13 +27,11 @@ def list_orgs():
 
     return response
 
-
 @org.route('/', methods=['DELETE'])
 def remove_org():
     data = request.get_json()
     return organization_controller.remove_organization(data['org_Id']).to_json()
     
-
 @org.route('/<int:org_id>', methods=['GET'])
 def get_org(org_id):
     return organization_controller.get_organization(int(org_id)).to_json()
@@ -43,7 +41,6 @@ def update_org(org_id):
     args = list(request.get_json().items())
     organization_controller.modify_organization_by_atribute(org_id, args[0][0], args[0][1])
     return 'UPDATED'
-    
 
 @org.route('/search', methods=['GET'])
 def search_org():
@@ -55,3 +52,4 @@ def search_org():
         response[i + 1] = json.loads(search_result[i].to_json())
 
     return response
+    
