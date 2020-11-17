@@ -54,4 +54,3 @@ class Project:
 
     def check_mentor_by_email(self, email):
         return self.mentor.email == email or self.aux_mentor.email == email
-            return False
