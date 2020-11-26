@@ -35,6 +35,7 @@ class OrganizationController:
 
         organization = self.get_organization(org_id)
         setattr(organization, atribute, new_atribute_value)
+        return organization
 
     def find_organization_by_atribute(self, atribute, atribute_value):
         if not atribute in ['name', 'category', 'state', 'owner']:

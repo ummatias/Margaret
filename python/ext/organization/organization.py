@@ -36,11 +36,10 @@ def remove_org():
 def get_org(org_id):
     return organization_controller.get_organization(int(org_id)).to_json()
 
-@org.route('/<int:org_id>', methods=['Post'])
+@org.route('/<int:org_id>', methods=['PATCH'])
 def update_org(org_id):
     args = list(request.get_json().items())
-    organization_controller.modify_organization_by_atribute(org_id, args[0][0], args[0][1])
-    return 'UPDATED'
+    return organization_controller.modify_organization_by_atribute(org_id, args[0][0], args[0][1]).to_json()
 
 @org.route('/search', methods=['GET'])
 def search_org():
