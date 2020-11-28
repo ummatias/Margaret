@@ -4,7 +4,6 @@ from python.util.validation import validate_organization_existence
 import re
 
 class OrganizationController:
-
     def __init__(self):
         self.organizations = {}
         self.current_id = 0
@@ -13,7 +12,6 @@ class OrganizationController:
         return list(self.organizations.values())
 
     def add_organization(self, name, desc, owner, category):
-        
         org_id = self.generate_organization_id()
         organization = Organization(name, desc, owner, category, org_id)
         self.organizations[org_id] = organization
@@ -45,15 +43,13 @@ class OrganizationController:
 
         for key in self.organizations:
             organization = self.organizations[key]
-
-            organizationAtribute =  getattr(organization, atribute).lower()
+            organizationAtribute = getattr(organization, atribute).lower()
+            
             if organizationAtribute == atribute_value.lower() or re.search(atribute_value.lower(), organizationAtribute) != None:
                 find_result.append(organization)
-            
+        
         return find_result
-            
+
     def generate_organization_id(self):
         self.current_id += 1
         return self.current_id
-
-    

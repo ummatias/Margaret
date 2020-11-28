@@ -31,7 +31,6 @@ class Organization:
             raise ValueError('Estado Inválido')
         self._state = state
 
-
     def add_project(self, key, value):
         self.projects[key] = [value]
 
