@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from python.models.user import User
+from python.util.validation import period_validation
 
 class Subscribed(User):
     def __init__(self, name, email, discord_id, period, minority_group=''):
@@ -14,5 +15,5 @@ class Subscribed(User):
     
     @period.setter
     def period(self, value):
-        validation.period_validation(value)
+        period_validation(value)
         self._period = value
