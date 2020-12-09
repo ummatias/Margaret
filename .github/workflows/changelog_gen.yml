@@ -1,8 +1,14 @@
 name: Changelog Generator
 
 on:
-    release:
-        branches: [ master ]
+  pull_request:
+    types: [closed]
+
+  release:
+    types: [published]
+
+  issues:
+    types: [closed, edited]
 
 jobs:
     make:
