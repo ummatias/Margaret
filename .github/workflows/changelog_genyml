@@ -1,0 +1,29 @@
+- name: Automatic Changelog Generator
+  # You may pin to the exact commit or the version.
+  # uses: CharMixer/auto-changelog-action@72ee445303a13d3fb4ac02a11b5813e70ec3d3d2
+  uses: CharMixer/auto-changelog-action@v1.1
+  with:
+    # Username of the owner of target GitHub repo (default: extracted from $GITHUB_REPOSITORY)
+    user: # optional
+    # Name of project on GitHub (default: extracted from $GITHUB_REPOSITORY)
+    project: # optional
+    # Limit pull requests to the release branch, such as master or release (required, default: master)
+    release_branch: # optional, default is master
+    # Output file. To print to STDOUT instead, use blank as path. (required, default: CHANGELOG.md)
+    output: # optional, default is CHANGELOG.md
+    # Optional base file to append generated changes to (default: HISTORY.md)
+    base: # optional
+    # To make more than 50 requests per hour your GitHub token is required. You can generate it at: https://github.com/settings/tokens/new<Paste>
+    token: # optional
+    # Changelog will start after specified tag.
+    since_tag: # optional
+    # Changelog will end before specified tag.
+    due_tag: # optional
+    # Changelog will exclude specified tags (comma seperated)
+    exclude_tags: # optional
+    # Issues with the specified labels will be excluded from changelog. Default is "duplicate,question,invalid,wontfix".
+    exclude_labels: # optional
+    # Date format. Default is %Y-%m-%d
+    date_format: # optional
+    # Put the unreleased changes in the specified release number.
+    future_release: # optional
